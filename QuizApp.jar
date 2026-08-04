@@ -1,0 +1,32 @@
+import javax.swing.JOptionPane;
+
+public class QuizApp {
+    public static void main(String[] args) {
+        
+        JOptionPane.showMessageDialog(null, "Okay guys");
+        
+        JOptionPane.showMessageDialog(null, "Quiz tayo");
+        
+        JOptionPane.showMessageDialog(null, "Question!");
+        
+        String[] options = {"Oo", "Hindi"};
+
+        int answer = JOptionPane.showOptionDialog(null, 
+                "Naging kayo ba?",
+                "Quiz Time",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]);
+        
+        if (answer == 0) { 
+            JOptionPane.showMessageDialog(null, "Congratulations!");
+        } else if (answer == 1) {
+            JOptionPane.showMessageDialog(null, "'Oo nga pala hindi nga pala tayo'");
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "Hala, iniwasan ang tanong");
+        }
+    }
+}
