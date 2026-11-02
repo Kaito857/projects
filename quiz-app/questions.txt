@@ -1,0 +1,13 @@
+# difficulty|question|choice A;choice B;choice C;choice D|number of the correct choice (1-4)
+easy|Which planet is known as the Red Planet?|Venus;Mars;Jupiter;Mercury|2
+easy|How many days are in a leap year?|364;365;366;367|3
+easy|What language is this quiz app written in?|Python;Java;Ruby;Go|2
+easy|Which keyword prints text to the screen in Python?|echo;write;print;say|3
+medium|What does CPU stand for?|Central Process Unit;Central Processing Unit;Computer Personal Unit;Core Processing Utility|2
+medium|Which data structure works on a first-in, first-out basis?|Stack;Queue;Tree;Graph|2
+medium|What is the time complexity of binary search?|O(n);O(log n);O(n squared);O(1)|2
+medium|Which Python library is commonly used for HTTP requests?|requests;flask;numpy;pytest|1
+hard|In Java, which keyword prevents a class from being subclassed?|static;abstract;final;sealed-off|3
+hard|What does the acronym ACID refer to in databases?|Atomicity, Consistency, Isolation, Durability;Access, Control, Integrity, Data;Atomic, Cached, Indexed, Distributed;None of these|1
+hard|Which sorting algorithm has O(n log n) worst-case time?|Quick sort;Bubble sort;Merge sort;Insertion sort|3
+hard|What is 2 to the power of 10?|512;1000;1024;2048|3

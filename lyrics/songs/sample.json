@@ -1,0 +1,9 @@
+{
+  "title": "Terminal Lullaby (original sample)",
+  "lines": [
+    {"text": "The cursor blinks like a sleepy star", "delay": 2.0},
+    {"text": "while the compiler hums along", "delay": 2.0},
+    {"text": "Every bug I fixed tonight", "delay": 2.5},
+    {"text": "turned into a little song", "delay": 3.0}
+  ]
+}

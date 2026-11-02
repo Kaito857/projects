@@ -1,52 +1,93 @@
 # Projects
 
-A small collection of beginner-friendly programs in Java and Python.
+A small collection of beginner-friendly terminal programs in Java and Python.
 
 ## Contents
 
 | Project | Language | Description |
 |---|---|---|
-| [QuizApp](#quizapp) | Java | A command-line quiz application |
-| [Line-by-Line Lyrics](#line-by-line-lyrics) | Python | Prints lyrics one line at a time with a custom delay per line |
-| [Typing Animation Lyrics](#typing-animation-lyrics) | Python | Prints lyrics letter by letter, like a typewriter |
+| [Quiz App](#quiz-app) | Java | Command-line quiz with difficulty levels, a timer, and high scores |
+| [Lyrics Player](#lyrics-player) | Python | Plays any song from a file: line-by-line, typing, or karaoke style |
+| [Original lyrics scripts](#original-lyrics-scripts) | Python | The first versions that the Lyrics Player grew out of |
 
-## QuizApp
+## Quiz App
 
-A quiz you play in the terminal. *(Add a sentence or two here: what topics, how many questions, how scoring works.)*
+Folder: [`quiz-app/`](quiz-app/)
 
-**Requirements:** Java JDK 8 or newer
+**Features**
+- Questions loaded from `questions.txt`, so you can add your own without touching the code
+- Pick a difficulty: easy, medium, hard, or all
+- Questions and answer choices are shuffled every game
+- 15 seconds per question (a slow answer counts as wrong)
+- Score at the end plus a saved top-5 high score list (`highscores.txt`)
 
-**Run it from the command prompt:**
+**Requirements:** Java JDK 11 or newer
 
 ```bash
-cd path/to/projects
+cd quiz-app
 javac QuizApp.java
-java QuizApp
+java QuizApp                 # uses questions.txt
+java QuizApp mystuff.txt     # or use your own question file
 ```
 
-Or run the prebuilt jar:
+**Question file format** (one question per line, `#` starts a comment):
+
+```
+difficulty|question|choice A;choice B;choice C;choice D|number of the correct choice
+easy|Which planet is known as the Red Planet?|Venus;Mars;Jupiter;Mercury|2
+```
+
+> The root-level `QuizApp.jar` is the original version and is kept for reference.
+
+## Lyrics Player
+
+Folder: [`lyrics/`](lyrics/)
+
+One script that plays any song file, with three display modes:
+
+| Mode | What it does |
+|---|---|
+| `line` | Prints each line, then waits (default) |
+| `typing` | Types each line letter by letter |
+| `karaoke` | Shows the whole song, highlights the current line, dims the rest |
+
+**Requirements:** Python 3.8+ (no extra packages)
 
 ```bash
-java -jar QuizApp.jar
+cd lyrics
+python lyrics_player.py songs/sample.json
+python lyrics_player.py songs/sample.txt --mode typing --speed 1.5
+python lyrics_player.py songs/sample.json --mode karaoke --color magenta
 ```
 
-## Line-by-Line Lyrics
+**Options:** `--mode`, `--speed` (2 = twice as fast), `--color`, `--no-color`
 
-Prints each lyric line on its own, waiting a set number of seconds before the next one. Each line has its own delay, so you can match the timing of the song.
+**Song file formats**
 
-```bash
-python "Basic Line-by-Line Delay lyrics.py"
+`.json`:
+```json
+{
+  "title": "My Song",
+  "lines": [
+    {"text": "First line", "delay": 2.0},
+    "A plain string uses the default delay"
+  ]
+}
 ```
 
-## Typing Animation Lyrics
-
-Prints lyrics one character at a time using `sys.stdout.flush()` and `time.sleep()`. `sing_line()` takes two optional arguments, `char_delay` (default 0.08s) and `line_delay` (default 1.5s), so you can speed it up or slow it down.
-
-```bash
-python "Letter-by-Letter Typing Animation lyrics.py"
+`.txt` (one line per lyric, optional `seconds|` prefix for the pause):
+```
+2.5|First line
+A line without a number uses the default delay
 ```
 
-**Requirements:** Python 3.x (no extra packages needed)
+The sample songs are original text written for this repo. Add your own song files to `lyrics/songs/`.
+
+## Original lyrics scripts
+
+The two first versions are still in the repo root:
+- `Basic Line-by-Line Delay lyrics.py`
+- `Letter-by-Letter Typing Animation lyrics.py`
 
 ## Author
 

@@ -1,0 +1,4 @@
+2.0|Add your own lyrics here, one line each
+2.5|Put a number and a pipe to set the pause
+Lines with no number use the default delay
+3.0|Then run: python lyrics_player.py songs/sample.txt
